@@ -20,11 +20,11 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.Text;
 
-public class MantraGPTUI extends Application {
-    private MantraGPT mantraGPT;
+public class StockMarketBotUI extends Application {
+    private StockMarketBot obj;
 
     public void start(Stage primaryStage) throws Exception {
-        mantraGPT= new MantraGPT();
+        obj= new StockMarketBot();
 
         Label chatLabel = new Label("Stock Market");
         chatLabel.setStyle("-fx-font-size: 24px; -fx-font-weight: bold;");
@@ -46,7 +46,7 @@ public class MantraGPTUI extends Application {
                 progressBar.setProgress(0);
                 new Thread(() -> {
                     try {
-                        String response = mantraGPT.chatGPT(message, progress -> {
+                        String response = obj.chatGPT(message, progress -> {
                             // Update the progress bar on the UI thread
                             javafx.application.Platform.runLater(() -> progressBar.setProgress(progress));
                         });
