@@ -5,7 +5,7 @@ import java.net.URL;
 import org.json.JSONObject;
 import java.util.function.Consumer;
 
-public class MantraGPT {
+public class StockMarketBot {
     public static String chatGPT(String text, Consumer<Double> progressCallback) throws Exception {
         String url = "https://api.openai.com/v1/completions";
         HttpURLConnection con = (HttpURLConnection) new URL(url).openConnection();
